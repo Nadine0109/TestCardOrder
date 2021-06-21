@@ -28,6 +28,7 @@ public class TestCardOrdering {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
+        options.setCapability("browserVersion", "92");
         driver = new ChromeDriver(options);
         driver.get("http://localhost:7777");
     }
