@@ -30,6 +30,7 @@ public class TestCardOrdering {
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
+        driver.get("http://localhost:7777");
     }
 
     @AfterEach
@@ -40,7 +41,6 @@ public class TestCardOrdering {
 
     @Test
     void shouldTestSuccess() {
-        driver.get("http://localhost:7777");
         WebElement form = driver.findElement(By.cssSelector("#root > div > form"));
         form.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Золотая Чупакабра");
         form.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79745321658");
@@ -64,7 +64,6 @@ public class TestCardOrdering {
 
     @Test
     void shouldTestInvalidNameWarning() {
-        driver.get("http://localhost:7777");
         WebElement name = driver.findElement(By.cssSelector("#root > div > form"));
         name.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Looney Tunes");
         name.findElement(By.className("button")).click();
@@ -75,7 +74,6 @@ public class TestCardOrdering {
 
     @Test
     void shouldTestEmptyNameWarning() {
-        driver.get("http://localhost:7777");
         WebElement name = driver.findElement(By.cssSelector("#root > div > form"));
         name.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("");
         name.findElement(By.className("button")).click();
@@ -86,7 +84,6 @@ public class TestCardOrdering {
 
     @Test
     void shouldTestInvalidTelWarning() {
-        driver.get("http://localhost:7777");
         WebElement tel = driver.findElement(By.cssSelector("#root > div > form"));
         tel.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Джон Сноу");
         tel.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("09328743897");
@@ -97,7 +94,6 @@ public class TestCardOrdering {
 
     @Test
     void shouldTestEmptyTelWarning() {
-        driver.get("http://localhost:7777");
         WebElement tel = driver.findElement(By.cssSelector("#root > div > form"));
         tel.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Джон Сноу");
         tel.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("");
