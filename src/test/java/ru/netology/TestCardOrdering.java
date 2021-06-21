@@ -18,8 +18,8 @@ public class TestCardOrdering {
 
     @BeforeAll
     static void setUpAll() {
-        //WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
+        //System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
     }
 
 
@@ -29,7 +29,7 @@ public class TestCardOrdering {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
     }
 
     @AfterEach
