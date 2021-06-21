@@ -9,8 +9,8 @@ branches:
 build: off
 
 install:
-
-  - java -jar artifacts/app-order.jar &
+  - choco install ./driver/win/chromedriver.exe
+  - java -jar ./artifacts/app-order.jar &
 
 build_script:
   - chmod +x gradlew
