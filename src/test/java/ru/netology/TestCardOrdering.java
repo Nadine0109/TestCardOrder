@@ -18,8 +18,8 @@ public class TestCardOrdering {
 
     @BeforeAll
     static void setUpAll() {
-       // WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
+        //System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
     }
 
 
