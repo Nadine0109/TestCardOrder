@@ -19,7 +19,7 @@ public class TestCardOrdering {
 
     @BeforeAll
     static void setUpAll() {
-        WebDriverManager.chromedriver().driverVersion("91.0.4472.101").setup();
+        WebDriverManager.chromedriver().driverVersion("91.0.4472.77").setup();
     }
 
 
