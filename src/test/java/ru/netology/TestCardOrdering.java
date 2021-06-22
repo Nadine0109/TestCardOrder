@@ -29,9 +29,9 @@ public class TestCardOrdering {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
+        options.addArguments("enableNetwork", "true");
         driver = new ChromeDriver(options);
-        driver.get("http://localhost:9999" +
-                "");
+        driver.get("http://localhost:7777");
     }
 
     @AfterEach
