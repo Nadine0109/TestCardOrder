@@ -30,7 +30,7 @@ public class TestCardOrdering {
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         options.addArguments("enableNetwork", "true");
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+        //DesiredCapabilities capabilities = new DesiredCapabilities();
         //capabilities.setVersion("91.0.4472.101");
         driver = new ChromeDriver(options);
         driver.get("http://localhost:7777");
@@ -44,6 +44,8 @@ public class TestCardOrdering {
 
     @Test
     void shouldTestSuccess() {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setVersion("91.0.4472.101");
         WebElement form = driver.findElement(By.cssSelector("#root > div > form"));
         form.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Золотая Чупакабра");
         form.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79745321658");
@@ -67,6 +69,8 @@ public class TestCardOrdering {
 
     @Test
     void shouldTestInvalidNameWarning() {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setVersion("91.0.4472.101");
         WebElement name = driver.findElement(By.cssSelector("#root > div > form"));
         name.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Looney Tunes");
         name.findElement(By.className("button")).click();
@@ -77,6 +81,8 @@ public class TestCardOrdering {
 
     @Test
     void shouldTestEmptyNameWarning() {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setVersion("91.0.4472.101");
         WebElement name = driver.findElement(By.cssSelector("#root > div > form"));
         name.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("");
         name.findElement(By.className("button")).click();
@@ -87,6 +93,8 @@ public class TestCardOrdering {
 
     @Test
     void shouldTestInvalidTelWarning() {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setVersion("91.0.4472.101");
         WebElement tel = driver.findElement(By.cssSelector("#root > div > form"));
         tel.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Джон Сноу");
         tel.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("09328743897");
@@ -97,6 +105,8 @@ public class TestCardOrdering {
 
     @Test
     void shouldTestEmptyTelWarning() {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setVersion("91.0.4472.101");
         WebElement tel = driver.findElement(By.cssSelector("#root > div > form"));
         tel.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Джон Сноу");
         tel.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("");
