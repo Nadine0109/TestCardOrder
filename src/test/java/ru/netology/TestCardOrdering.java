@@ -6,7 +6,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,8 +19,7 @@ public class TestCardOrdering {
 
     @BeforeAll
     static void setUpAll() {
-        WebDriverManager.chromedriver().setup();
-
+        WebDriverManager.chromedriver().driverVersion("91.0.4472.101").setup();
     }
 
 
@@ -33,7 +31,7 @@ public class TestCardOrdering {
         options.addArguments("--headless");
         options.addArguments("enableNetwork", "true");
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setVersion("91.0.4472.101");
+        //capabilities.setVersion("91.0.4472.101");
         driver = new ChromeDriver(options);
         driver.get("http://localhost:7777");
     }
