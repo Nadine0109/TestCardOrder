@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -30,8 +30,6 @@ public class TestCardOrdering {
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         options.addArguments("enableNetwork", "true");
-        //DesiredCapabilities capabilities = new DesiredCapabilities();
-        //capabilities.setVersion("91.0.4472.77");
         driver = new ChromeDriver(options);
         driver.get("http://localhost:7777");
     }
