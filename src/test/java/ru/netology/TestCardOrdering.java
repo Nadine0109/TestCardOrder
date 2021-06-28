@@ -51,17 +51,17 @@ public class TestCardOrdering {
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
     }
 
-//    @Test
-//    void shouldTestSuccessV2() {
-//        driver.get("http://localhost:7777");
-//        WebElement form = driver.findElement(By.cssSelector("#root > div > form"));
-//        form.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Звёздная Чупакабра");
-//        form.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+16947652986");
-//        form.findElement(By.cssSelector(".checkbox__box")).click();
-//        form.findElement(By.className("button")).click();
-//        String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
-//        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
-//    }
+    @Test
+    void shouldTestSuccessV2() {
+        driver.get("http://localhost:7777");
+        WebElement form = driver.findElement(By.cssSelector("#root > div > form"));
+        form.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Звёздная Чупакабра");
+        form.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+16947652986");
+        form.findElement(By.cssSelector(".checkbox__box")).click();
+        form.findElement(By.className("button")).click();
+        String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
+        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
+    }
 
     @Test
     void shouldTestInvalidNameWarning() {
